@@ -2,6 +2,9 @@
 FROM golang:1.23 AS builder
 
 # Set environment variables
+ENV GOBIN=/usr/local/bin
+
+# Set environment variables
 ENV OPERATOR_SDK_VERSION=v1.36.1
 
 # Create a working directory
@@ -21,11 +24,6 @@ RUN make install
 
 # Use a minimal base image for the final image
 FROM alpine:3.20
-
-# Install necessary packages
-RUN apk --no-cache add \
-    ca-certificates \
-    git
 
 # Create a working directory
 WORKDIR /workspace
