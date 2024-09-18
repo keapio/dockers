@@ -34,7 +34,5 @@ WORKDIR /workspace
 COPY --from=builder /usr/local/bin/operator-sdk /usr/local/bin/operator-sdk
 
 # Set the entrypoint for the container
-ENTRYPOINT ["/usr/local/bin/operator-sdk"]
+ENTRYPOINT ["sh"]
 
-# Default command
-CMD ["--help"]
