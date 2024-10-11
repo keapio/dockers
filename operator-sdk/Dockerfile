@@ -25,7 +25,7 @@ RUN make install
 # Use a minimal base image for the final image
 FROM alpine:3.20
 
-RUN apk add --no-cache make
+RUN apk add --no-cache curl make
 
 # Create a working directory
 WORKDIR /workspace
